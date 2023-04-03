@@ -1,0 +1,406 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    max-width: 1000px;
+    margin: 2rem auto
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+form label {
+    margin-right: 1rem;
+}
+
+form input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form button[type="submit"],
+section button[type="button"] {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* INDEX */
+.nav li:last-child {
+    position: relative;
+}
+
+.user {
+    position: absolute;
+    width: 25px;
+    right: -33px;
+    bottom: 4px;
+}
+
+.book-list {
+    display: flex;
+    margin: 24px 0;
+    flex-wrap: wrap;
+}
+
+.list-item {
+    width: 23%;
+    border: 1px solid #868686;
+    padding: 8px;
+    margin: 10px 9px;
+
+}
+
+.list-item a {
+
+    font-weight: 700;
+
+}
+
+.list-item p,
+.list-item a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title-book {
+    color: blue;
+}
+
+.btnMuonSach {
+    display: block;
+    background-color: blue;
+    width: 100px;
+    padding: 4px 5px;
+}
+
+.message-error {
+    border: 1px solid #ff0606;
+    padding: 5px 9px;
+    border-radius: 6px;
+}
+
+.message-success {
+    border: 1px solid green;
+    padding: 5px 9px;
+    border-radius: 6px;
+}
+
+.label {
+    font-weight: 700;
+}
+
+#formFilter {}
+
+#filter {
+    padding: 11px 3px;
+    font-size: 17px;
+}
+
+.search-filter {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* ADMIN STYLE */
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.menu {
+    margin-bottom: 20px;
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #ddd;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.menu a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.borrow-form {
+    width: 50%;
+    margin: auto;
+}
+
+.borrow-form h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"] {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+button[type="submit"] {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.borrowed-books {
+    margin-top: 2rem;
+}
+
+.borrowed-books h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    padding: 0.5rem;
+    border-bottom: 2px solid #007bff;
+}
+
+td {
+    font-size: 16px;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+/* update thông tin mượn sách */
+.edit-borrow-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-borrow-form h2 {
+    text-align: center;
+}
+
+.edit-borrow-form .form-group {
+    margin-bottom: 20px;
+}
+
+.edit-borrow-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.edit-borrow-form input[type="text"],
+.edit-borrow-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.edit-borrow-form button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.edit-borrow-form button[type="submit"]:hover {
+    background-color: #0069d9;
+}
+
+#status {
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+form button[type="submit"].btn,
+.btn {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    width: 85px;
+}
+
+form button[type="submit"].btnDelete,
+.btnDelete {
+    background-color: #ff0606;
+}
+
+form button[type="submit"].btnEdit,
+.btnEdit {
+    background-color: #007bff;
+}
+
+.btnSuccess {
+    background-color: green;
+}
+
+.btnDanger {
+    background-color: orange;
+}
+
+.btnInfo {
+    background-color: #007bff;
+}
+
+/* STATIC STYLE */
+.static-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #f0f0f0;
+    padding: 12px 0;
+    margin: 8px 0;
+}
+.static-list-2{
+
+}
+.static-item{
+
+}
+.static-title{
+
+}
+.static-body{
+
+}
+.static-body span:last-child{
+    color: red;
+    font-weight: 700;
+}
+
+.static-icon {
+    width: 30px;
+    margin-right: 3px;
+}
