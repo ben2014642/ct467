@@ -83,7 +83,7 @@ if (isset($_SESSION['user'])) {
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Thư viện trường Đại Học</p>
+        <p>&copy; 2023 Thư viện trường Đại Học sd</p>
     </footer>
 </body>
 
