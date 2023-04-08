@@ -166,34 +166,7 @@ while ($row = mysqli_fetch_array($query, 1)) {
                 </select>
 
             </div>
-            <!-- <div class="form-group">
-                <label for="thumbnail">Thumbnail</label>
-                <input type="text" id="thumbnail" name="thumbnail" required>
-            </div>
-            <div class="form-group">
-                <label for="author">Author</label>
-                <input type="text" id="author" name="author" required>
-                <div id="password-match-error" class="error-message"></div>
-            </div>
-            <div class="form-group">
-                <label for="publisher">Publisher</label>
-                <input type="text" id="publisher" name="publisher" required>
-            </div>
-            <div class="form-group">
-                <label for="publication_date">Publication Date</label>
-                <input type="date" id="publication_date" name="publication_date" required>
-            </div>
-            <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="text" id="quantity" name="quantity" required>
-            </div>
-            <div class="form-group">
-                <label for="status">Status</label>
-                <select name="status" id="status">
-                    <option value="0">Draft</option>
-                    <option value="1">Public</option>
-                </select>
-            </div> -->
+
             <button type="submit" class="btn btn-primary">Lưu</button>
         </form>
     </div>

@@ -6,13 +6,9 @@ if (isset($_POST['search'])) {
 } else {
     $search = '';
 }
-$sql = "SELECT borrows.borrow_id,students.student_id,students.name,books.title FROM borrows
-            JOIN students ON borrows.student_id = students.student_id
-            JOIN books ON borrows.book_id = books.book_id WHERE (borrows.borrow_id) = '$search' OR (students.name) like '%$search%'
-            ";
-// $sql = "SELECT students.student_id,students.name,COUNT(borrows.student_id) AS total_borrow FROM borrows
-//             JOIN students ON borrows.student_id = students.student_id 
-//             GROUP BY students.student_id,students.name";
+$sql = "SELECT borrows.book_id,books.title,COUNT(borrows.book_id) as count_borrow FROM borrows
+JOIN books ON borrows.book_id = books.book_id WHERE (borrows.book_id) = '$search' OR (books.title) like '%$search%'
+GROUP BY borrows.book_id,books.title";
 $query = mysqli_query($conn, $sql);
 
 $borrows = [];
@@ -23,25 +19,23 @@ while ($row = mysqli_fetch_array($query, 1)) {
 ?>
 <?php require_once("header.php") ?>
 <div class="content">
-    <span>Thống kê số lượng theo tên: <a href="static-borrowcount.php">>>>>Xem chi tiết<<<<</a></span>
+    
+    <a href="javascript:history.back(1);" class="btn btnDanger">Quay lại</a>
     <div class="static-list">
-
-        <form action="static-borrowed.php" method="POST">
+        <form action="static-borrowbook.php" method="POST">
             <div class="">
                 <label for="search">Search:</label>
                 <input placeholder="" type="text" id="search" name="search">
                 <button type="submit"><img style="width: 19px" src="../image/search-borrow.png" alt=""></button>
             </div>
         </form>
-        <h2>Borrowed By Student</h2>
+        <h2>Số Lượng Sách Đã Được Mượn</h2>
         <table style="width: 100%">
             <thead>
                 <tr>
-                    <th>Borrow ID</th>
-                    <th>Student ID</th>
-                    <th>Student Name</th>
-                    <th>Book Name</th>
-
+                    <th>Book ID</th>
+                    <th>Book Title</th>
+                    <th>Borrow Count</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,10 +43,9 @@ while ($row = mysqli_fetch_array($query, 1)) {
                 foreach ($borrows as $item) {
                     echo '
                         <tr>
-                            <td>' . $item['borrow_id'] . '</td>
-                            <td>' . $item['student_id'] . '</td>
-                            <td>' . $item['name'] . '</td>
+                            <td>' . $item['book_id'] . '</td>
                             <td>' . $item['title'] . '</td>
+                            <td>' . $item['count_borrow'] . '</td>
                         
                         </tr>';
                 }

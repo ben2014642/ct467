@@ -120,15 +120,14 @@
             data: $(this).serialize(),
             dataType: "json",
             success: function(response) {
-                if (response.status == 'success') {
-                    toastr.success('Đăng nhập thành công !')
-                    setTimeout(() => {
-                        window.location.href = 'index.php';
-                    }, 1500);
-                } else {
-                    toastr.error('Sai tên tài khoản hoặc mật khẩu !')
+                toastr.success('Đăng nhập thành công !')
+                setTimeout(() => {
+                    window.location.href = 'index.php';
+                }, 1500);
+            },
+            error: function(response) {
+                toastr.error('Sai tên tài khoản hoặc mật khẩu !')
 
-                }
             }
         });
     })

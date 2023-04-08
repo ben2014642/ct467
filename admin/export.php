@@ -6,30 +6,28 @@ require_once("../lib/conf.php");
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-$sql = "SELECT book_id,title,author from books";
-$query = mysqli_query($conn, $sql);
-$data = [];
-while ($row = mysqli_fetch_array($query, 1)) {
-    $data[] = $row;
-}
 
-// print_r($data);
-// print_r($data1); die();
+
 $spreadsheet = new Spreadsheet();
-// $activeWorksheet = $spreadsheet->getActiveSheet();
-$spreadsheet->getActiveSheet()->getColumnDimension('A')->setWidth(20);
-$spreadsheet->getActiveSheet()->getColumnDimension('B')->setWidth(20);
-$spreadsheet->getActiveSheet()->getColumnDimension('C')->setWidth(30);
-$spreadsheet->getActiveSheet()->setCellValue('A1', 'Tên');
-$spreadsheet->getActiveSheet()->setCellValue('B1', 'Giới Tính');
-$spreadsheet->getActiveSheet()->setCellValue('C1', 'Đơn giá(/shoot)');
-// $activeWorksheet->setCellValue('A1', 'Một hai ba !');
-$numRow = 2;
-foreach ($data as $row) {
-    $spreadsheet->getActiveSheet()->setCellValue('A' . $numRow, $row['book_id']);
-    $spreadsheet->getActiveSheet()->setCellValue('B' . $numRow, $row['title']);
-    $spreadsheet->getActiveSheet()->setCellValue('C' . $numRow, $row['author']);
-    $numRow++;
+
+$page = $_GET['page'];
+
+switch ($page) {
+    case 'infoBook':
+        include_once("export/info_book.php");
+        $excel = createExcel($spreadsheet, $conn);
+        break;
+    case 'borrowBook';
+        include_once("export/borrow_book.php");
+        $excel = createExcel($spreadsheet, $conn);
+        break;
+    case 'donateBook';
+        include_once("export/donate_book.php");
+        $excel = createExcel($spreadsheet, $conn);
+        break;
+    default:
+        # code...
+        break;
 }
 $writer = new Xlsx($spreadsheet);
 // redirect output to client browser

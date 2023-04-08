@@ -34,12 +34,13 @@ while ($row = mysqli_fetch_array($query, 1)) {
     <div class="borrowed-books">
         <div class="">
             <a href="add-borrow.php" class="btn btnSuccess">Thêm</a>
-            <a href="" class="btn btnSuccess">In</a>
+            <a href="export.php?page=borrowBook" class="btn btnSuccess">Xuất Excel</a>
         </div>
         <h2>Borrow Books</h2>
         <table>
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Book Name</th>
                     <th>Borrower Name</th>
                     <th>Borrow Date</th>
@@ -64,6 +65,7 @@ while ($row = mysqli_fetch_array($query, 1)) {
                     }
                     echo
                     '<tr>
+                        <td>' . $item['borrow_id'] . '</td>
                         <td>' . $item['title'] . '</td>
                         <td>' . $item['name'] . '</td>
                         <td>' . $item['borrow_date'] . '</td>

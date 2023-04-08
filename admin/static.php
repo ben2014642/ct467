@@ -24,8 +24,9 @@ $statics = [
 <?php require_once("header.php") ?>
 <div class="content">
     <div class="direct-link">
-        <a href="static-borrowed.php">Borrowed Student</a>
-        <a href="static-borrowcount.php">Borrowed Count</a>
+        <a href="static-borrowed.php" class="btn btnInfo">S.Viên Mượn Sách</a>
+        <a href="static-borrowbook.php" class="btn btnDanger">Số Sách Đã Được Mượn</a>
+        
     </div>
     <div class="static-list-2">
         <div class="static-item">

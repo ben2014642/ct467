@@ -12,15 +12,18 @@ if ($data) {
     $arr = [
         'student_id' => $data['student_id'],
         'name' => $data['name'],
+        // 'diem' => $data['diem']
     ];
     $_SESSION['user'] = $arr;
     echo json_encode([
         'status' => 'success'
     ]);
 } else {
-    echo json_encode([
-        'status' => 'error'
-    ]);
+    // echo json_encode([
+    //     'status' => 'error'
+    // ]);
+    header('X-PHP-Response-Code: 500', true, 500);
+
 }
 mysqli_close($conn);
 

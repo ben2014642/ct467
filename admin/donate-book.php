@@ -35,7 +35,7 @@ while ($row = mysqli_fetch_array($query, 1)) {
     <div class="borrowed-books">
         <div class="">
             <a href="add-donate.php" class="btn btnSuccess">Thêm</a>
-            <a href="" class="btn btnSuccess">In</a>
+            <a href="export.php?page=donateBook" class="btn btnSuccess">Xuất Excel</a>
         </div>
         <h2>Donate Books</h2>
         <table>

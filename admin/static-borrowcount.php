@@ -24,6 +24,8 @@ while ($row = mysqli_fetch_array($query, 1)) {
 ?>
 <?php require_once("header.php") ?>
 <div class="content">
+    
+    <a href="javascript:history.back(1);" class="btn btnDanger">Quay lại</a>
     <div class="static-list">
         <form action="static-borrowcount.php" method="POST">
             <div class="">

@@ -1,6 +1,9 @@
 <?php
+require_once("lib/conf.php");
 session_start();
 $book_id = isset($_GET['book_id']) ? $_GET['book_id'] : null;
+$sql = "SELECT * FROM books WHERE book_id = $book_id";
+$data = mysqli_fetch_assoc(mysqli_query($conn,$sql));
 
 ?>
 <!DOCTYPE html>
@@ -66,12 +69,16 @@ $book_id = isset($_GET['book_id']) ? $_GET['book_id'] : null;
             <input type="text" id="book-id" value="<?= $book_id ?>" name="book-id" hidden>
         </div>
         <div>
+            <label for="book-title">Book Title</label>
+            <input type="text" id="book-title" value="<?= $data['title'] ?>" name="book-title" disabled>
+        </div>
+        <div>
             <label for="borrow-date">Ngày mượn:</label>
-            <input type="date" id="borrow-date" name="borrow-date" required>
+            <input type="date" id="borrow-date" readonly name="borrow-date" required>
         </div>
         <div>
             <label for="return-date">Ngày trả:</label>
-            <input type="date" id="return-date" name="return-date" required>
+            <input type="date" id="return-date" name="return-date" required readonly>
         </div>
         <button name="submitBorrow" type="submit">Mượn sách</button>
     </form>
@@ -103,6 +110,12 @@ $book_id = isset($_GET['book_id']) ? $_GET['book_id'] : null;
             }
         });
     })
+
+    let toDay = new Date();
+    document.getElementById('borrow-date').valueAsDate = toDay;
+    let ngayTra = new Date(toDay.setMonth(toDay.getMonth() + 5));
+    document.getElementById('return-date').valueAsDate = ngayTra;
+
 </script>
 
 </html>

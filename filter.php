@@ -26,51 +26,15 @@ while ($row = mysqli_fetch_array($query, 1)) {
     $data[] = $row;
 }
 
-// $messageError = $messageSuccess = '';
-
-// if (isset($_GET['msg'])) {
-//   $messageError = $messageSuccess = $_GET['msg'];
-// }
-
 if (isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
 }
-
+ 
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Chương trình quản lý thông tin sách, mượn trả sách của thư viện trường Đại Học</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-</head>
-
-<body>
-    <header>
-        <h1>Thư viện trường Đại Học</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Trang chủ</a></li>
-                <li><a href="#">Danh mục sách</a></li>
-                <?php
-                if (empty($user)) {
-                    echo '
-            <li><a href="login.php">Đăng nhập</a></li>
-            <li><a href="register.php">Đăng ký</a></li>
-            ';
-                } else {
-                    echo '<li>
-            Xin chào, 
-            <span style="color: #ff1111">' . $user['name'] . '</span>
-            </li>';
-                }
-                ?>
-            </ul>
-        </nav>
-    </header>
+<?php 
+    require_once("include/header.php");
+?>
     <main>
         <section>
             <?php

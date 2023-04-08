@@ -33,7 +33,7 @@ while ($row = mysqli_fetch_array($query, 1)) {
     <div class="borrowed-books">
         <div class="">
             <a href="add-book.php" class="btn btnSuccess">Thêm</a>
-            <a href="" class="btn btnSuccess">Xuất Execl</a>
+            <a href="export.php?page=infoBook" class="btn btnSuccess">Xuất Excel</a>
         </div>
         <h2>List Books</h2>
         <table>
